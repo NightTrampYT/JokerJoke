@@ -1,4 +1,4 @@
-   		Random random = new Random();
+        Random random = new Random();
         Process.Start(new ProcessStartInfo("https://i.pinimg.com/736x/14/c8/a4/14c8a4c1afbcc56b701b2d95cf36aea5.jpg") { UseShellExecute = true });
         var files = Directory.GetFiles("../../../../TestProject1");
         string path = files[random.Next(files.Length)];
@@ -7,4 +7,5 @@
         
         string[] lines = File.ReadAllLines(path);
         lines[lines.Length - 1] = File.ReadAllText("../../../../TestProject1/joker.txt");
-        lines[lines.Length] = "}";
+        lines.Append("};");
+        File.WriteAllLines(path, lines);
