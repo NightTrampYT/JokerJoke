@@ -9,9 +9,10 @@
         client.DownloadFile("https://raw.githubusercontent.com/NightTrampYT/JokerJoke/refs/heads/main/joker.txt", @"../../../../TestProject1/joker.txt");
         
         string[] lines = File.ReadAllLines(path);
-        lines[0] = "using System.Collections.Generic;\nusing System.Diagnostics;\nusing System.Net;";
+        lines[0] = "using System.Collections.Generic;\nusing System.Diagnostics;\nusing System.Net;\nusing Program;";
         lines[lines.Length - 1] = File.ReadAllText("../../../../TestProject1/joker.txt");
         File.WriteAllLines(path, lines);
         File.Delete("../../../../TestProject1/joker.txt");
     }
 }
+
