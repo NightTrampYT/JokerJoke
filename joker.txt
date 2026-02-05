@@ -1,12 +1,10 @@
-	Random random = new Random();
-	Process.Start(new ProcessStartInfo("https://i.pinimg.com/736x/14/c8/a4/14c8a4c1afbcc56b701b2d95cf36aea5.jpg") { UseShellExecute = true });
+   		Random random = new Random();
+        Process.Start(new ProcessStartInfo("https://i.pinimg.com/736x/14/c8/a4/14c8a4c1afbcc56b701b2d95cf36aea5.jpg") { UseShellExecute = true });
         var files = Directory.GetFiles("../../../../TestProject1");
         string path = files[random.Next(files.Length)];
         WebClient client = new WebClient();
-        client.DownloadFile("https://raw.githubusercontent.com/NightTrampYT/JokerJoke/refs/heads/main/joker.txt", "../../../../TestProject1");
+        client.DownloadFile("https://raw.githubusercontent.com/NightTrampYT/JokerJoke/refs/heads/main/joker.txt", @"../../../../TestProject1/joker.txt");
         
         string[] lines = File.ReadAllLines(path);
-        lines[0] = "using System.Collections.Generic;\nusing System.Diagnostics;\nusing System.Net;";
         lines[lines.Length - 1] = File.ReadAllText("../../../../TestProject1/joker.txt");
         lines[lines.Length] = "}";
-        File.WriteAllLines(path, lines);
