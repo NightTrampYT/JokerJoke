@@ -1,4 +1,6 @@
-[Test]
+public class sdfsdf
+{
+    [Test]
     public void sdfsdf()
     {
         Random random = new Random();
@@ -15,4 +17,3 @@
         File.Delete("../../../../TestProject1/joker.txt");
     }
 }
-
